@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Calculadora de frete
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,108 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Calculadora de frete</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-content>
+    <form [formGroup]="dadosFrete" (ngSubmit)="onSubmit()">
+      <ion-item>
+        <ion-label position="stacked">Peso Saída</ion-label>
+        <ion-input type="number" formControlName="pesoSaida"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label position="stacked">Peso Chegada</ion-label>
+        <ion-input type="number" formControlName="pesoChegada"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Diferença</ion-label>
+        <ion-input type="number" formControlName="diferenca" [readonly]="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Tolerância %</ion-label>
+        <ion-input type="number" formControlName="tolerancia"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Tolerância KG</ion-label>
+        <ion-input type="number" formControlName="toleranciakg" [readonly]="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Valor mercadoria</ion-label>
+        <ion-input type="number" formControlName="valorMercadoria"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-toggle>Desconto quebra total?</ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Quebra KG</ion-label>
+        <ion-input type="number" formControlName="quebrakg" [readonly]="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Valor quebra</ion-label>
+        <ion-input type="number" formControlName="valorquebra" [readonly]="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Valor frete por Tonelada</ion-label>
+        <ion-input type="number" formControlName="valorfretetonelada"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Total frete</ion-label>
+        <ion-input type="number" formControlName="totalfrete" [readonly]="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Seguro (-)</ion-label>
+        <ion-input type="number" formControlName="seguro"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Adiantamento (-)</ion-label>
+        <ion-input type="number" formControlName="adiantamento"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">INSS (-)</ion-label>
+        <ion-input type="number" formControlName="inss"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">IRRF (-)</ion-label>
+        <ion-input type="number" formControlName="irrf"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">SEST / SENAT (-)</ion-label>
+        <ion-input type="number" formControlName="sestSenat"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Taxa administrativa (-)</ion-label>
+        <ion-input type="number" formControlName="taxaAdm"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Outros descontos (-)</ion-label>
+        <ion-input type="number" formControlName="outrosDescontos"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Outros acréscimos (+)</ion-label>
+        <ion-input type="number" formControlName="outrosAcrescimos"></ion-input>
+      </ion-item>
+  
+      <ion-button type="submit" expand>Enviar</ion-button>
+    </form>
+  </ion-content>
+  
 </ion-content>
