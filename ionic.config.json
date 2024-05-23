@@ -1,0 +1,7 @@
+{
+  "name": "shipping-calculator",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
