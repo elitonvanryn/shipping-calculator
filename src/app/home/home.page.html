@@ -27,7 +27,7 @@
 
       <ion-item>
         <ion-label position="stacked">Diferença</ion-label>
-        <ion-input type="number" formControlName="diferenca" [readonly]="true"></ion-input>
+        <ion-input type="number" formControlName="diferenca" value="dadosFrete.get('diferenca')?.value" [readonly]="true"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -37,7 +37,7 @@
 
       <ion-item>
         <ion-label position="stacked">Tolerância KG</ion-label>
-        <ion-input type="number" formControlName="toleranciakg" [readonly]="true"></ion-input>
+        <ion-input type="number" formControlName="toleranciaKg" [readonly]="true"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -46,27 +46,27 @@
       </ion-item>
 
       <ion-item>
-        <ion-toggle>Desconto quebra total?</ion-toggle>
+        <ion-toggle formControlName="quebraTotal">Desconto quebra total?</ion-toggle>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Quebra KG</ion-label>
-        <ion-input type="number" formControlName="quebrakg" [readonly]="true"></ion-input>
+        <ion-input type="number" formControlName="quebraKg" [readonly]="true"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Valor quebra</ion-label>
-        <ion-input type="number" formControlName="valorquebra" [readonly]="true"></ion-input>
+        <ion-input type="number" formControlName="valorQuebra" [readonly]="true"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Valor frete por Tonelada</ion-label>
-        <ion-input type="number" formControlName="valorfretetonelada"></ion-input>
+        <ion-input type="number" formControlName="valorFreteTonelada"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label position="stacked">Total frete</ion-label>
-        <ion-input type="number" formControlName="totalfrete" [readonly]="true"></ion-input>
+        <ion-input type="number" formControlName="totalFrete"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -108,9 +108,15 @@
         <ion-label position="stacked">Outros acréscimos (+)</ion-label>
         <ion-input type="number" formControlName="outrosAcrescimos"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Total saldo</ion-label>
+        <ion-input type="number" formControlName="totalSaldo"></ion-input>
+      </ion-item>
   
       <ion-button type="submit" expand>Enviar</ion-button>
     </form>
+
   </ion-content>
   
 </ion-content>
